@@ -6,7 +6,6 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
         if (jsonValue == null) {
             if (typeof initialValue === "function") {
                 return (initialValue as () => T)();
-                ;
             } else {
                 return initialValue;
             }

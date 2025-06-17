@@ -5,6 +5,7 @@ import {NewNote} from "./components/NewNote";
 import {useLocalStorage} from "./useLocalStorage";
 import {useMemo} from "react";
 import {v4 as uuidV4} from "uuid";
+import {NoteList} from "./components/NoteList";
 
 export type RawNote = {
     id: string;
@@ -57,7 +58,7 @@ function App() {
     return (
         <Container className="my-4">
             <Routes>
-                <Route path="/" element={<h1>Home</h1>}></Route>
+                <Route path="/" element={<NoteList availableTags={tags}/>}></Route>
                 <Route path="/new" element={<NewNote
                     onSubmit={onCreateNote}
                     onAddTag={addTag}
